@@ -9,7 +9,7 @@ var corsOptions = {
 }
 
 app.get('/', cors(corsOptions), (req, res, next) => {
-  const diceValue = Math.floor(Math.random() * 5 + 1);
+  const diceValue = Math.floor(Math.random() * 6 + 1);
   res.json({ value: diceValue });
 })
 
