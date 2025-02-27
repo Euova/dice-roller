@@ -3,9 +3,12 @@ const cors = require('cors');
 const app = express();
 const port = 8080; // Azure expects 8080
 
-app.use(cors());
+var corsOptions = {
+  origin: '*',
+  optionSuccessStatus: 200
+}
 
-app.get('/roll-dice', (req, res) => {
+app.get('/', cors(corsOptions), (req, res, next) => {
   const diceValue = Math.floor(Math.random() * 5 + 1);
   res.json({ value: diceValue });
 })
