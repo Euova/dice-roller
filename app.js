@@ -9,10 +9,10 @@ var corsOptions = {
 }
 
 app.get('/', cors(corsOptions), (req, res, next) => {
-  const diceValue = Math.floor(Math.random() * 6 + 1);
-  res.json({ value: diceValue });
+  const randomValue = Math.floor(Math.random() * 6 + 1);
+  res.json({ value: randomValue });
 })
 
 app.listen(port, () => {
-  console.log(`Dice app listening on port ${port}`)
+  console.log(`App listening on port ${port}`)
 })
